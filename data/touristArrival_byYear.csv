@@ -1,4 +1,4 @@
-﻿Country,Year,Arrivals
+Country,Year,Arrivals
 Austria,2013,7932
 Belgium,2013,11562
 Bulgaria,2013,597
@@ -99,7 +99,7 @@ Australia,2013,18340
 New Zealand,2013,668
 Brazil,2013,2894
 Canada,2013,4426
-USA,2013,5741
+United States,2013,5741
 Austria,2014,8303
 Belgium,2014,11465
 Bulgaria,2014,700
@@ -200,7 +200,7 @@ Australia,2014,17434
 New Zealand,2014,714
 Brazil,2014,2455
 Canada,2014,4669
-USA,2014,7139
+United States,2014,7139
 Austria,2015,11425
 Belgium,2015,14223
 Bulgaria,2015,901
@@ -301,7 +301,7 @@ Australia,2015,17835
 New Zealand,2015,696
 Brazil,2015,1947
 Canada,2015,5608
-USA,2015,8546
+United States,2015,8546
 Austria,2016,16643
 Belgium,2016,15675
 Bulgaria,2016,1707
@@ -402,7 +402,7 @@ Australia,2016,18559
 New Zealand,2016,939
 Brazil,2016,2912
 Canada,2016,6060
-USA,2016,8524
+United States,2016,8524
 Austria,2017,17596
 Belgium,2017,16420
 Bulgaria,2017,1386
@@ -503,7 +503,7 @@ Australia,2017,21271
 New Zealand,2017,1052
 Brazil,2017,4659
 Canada,2017,6908
-USA,2017,9655
+United States,2017,9655
 Austria,2018,18572
 Belgium,2018,15727
 Bulgaria,2018,1913
@@ -604,7 +604,7 @@ Australia,2018,20949
 New Zealand,2018,1002
 Brazil,2018,3743
 Canada,2018,7747
-USA,2018,10525
+United States,2018,10525
 Austria,2019,18390
 Belgium,2019,16959
 Bulgaria,2019,2040
@@ -705,7 +705,7 @@ Australia,2019,18997
 New Zealand,2019,1059
 Brazil,2019,3521
 Canada,2019,8011
-USA,2019,10407
+United States,2019,10407
 Austria,2020,6343
 Belgium,2020,2310
 Bulgaria,2020,811
@@ -806,4 +806,4 @@ Australia,2020,3073
 New Zealand,2020,196
 Brazil,2020,868
 Canada,2020,1804
-USA,2020,2651
+United States,2020,2651
