@@ -4,6 +4,9 @@
     "background":"#bde3ff",
     "vconcat": [{
       "title": {
+        "subtitle": "(Figure 3)",
+        "subtitleColor": "chocolate",
+        "subtitleFont": "Acme",
         "color": "chocolate",
         "text": "Monthly % Occupancy of all hotels (2010 - 2020)",
         "font": "Acme",
