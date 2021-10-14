@@ -1,0 +1,82 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": { "url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/data/touristGender.csv"},
+    "spacing": 1,
+    "hconcat": [{
+      "transform": [{
+        "filter": {"field": "Gender", "equal": "Female"}
+      }],
+      "title": "Female",
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Year", "axis": null, "sort": "ascending"
+        },
+        "x": {
+          "aggregate":"sum", "field": "NumTourists",
+          "title": "Number of tourists",
+          "axis": {"format": "s"},
+          "sort": "descending"
+        },
+        "color": {
+          "field": "Gender",
+          "scale": {"range": ["#FF7400", "#0071DB"]},
+          "legend": null
+        },
+        "tooltip": [
+            { "field": "Year", "type": "quantitative", "title": "Year" },
+            {
+                "field": "NumTourists",
+                "type": "quantitative",
+                "title": "Number of tourists",
+                "format": ","
+            }        
+        ]
+      }
+    }, {
+      "width": 20,
+      "view": {"stroke": null},
+      "mark": {
+        "type": "text",
+        "align": "center"
+      },
+      "encoding": {
+        "y": {"field": "Year", "type": "ordinal", "axis": null, "sort": "ascending"},
+        "text": {"field": "Year", "type": "quantitative"}
+      }
+    }, {
+      "transform": [{
+        "filter": {"field": "Gender", "equal": "Male"}
+      }],
+      "title": "Male",
+      "mark": "bar",
+      "encoding": {
+        "y": {
+          "field": "Year", "title": null,
+          "axis": null, "sort": "ascending"
+        },
+        "x": {
+          "aggregate":"sum", "field": "NumTourists",
+          "title": "Number of tourists",
+          "axis": {"format": "s"}
+        },
+        "color": {
+          "field": "Gender",
+          "legend": null
+        },
+        "tooltip": [
+            { "field": "Year", "type": "quantitative", "title": "Year" },
+            {
+                "field": "NumTourists",
+                "type": "quantitative",
+                "title": "Number of tourists",
+                "format": ","
+            }        
+        ]
+      }
+    }],
+    "config": {
+      "view": {"stroke": null},
+      "axis": {"grid": false}
+    }
+  }
