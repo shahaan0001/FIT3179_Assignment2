@@ -5,6 +5,9 @@
     "height":250,
     "background":"#bde3ff",
     "title": {
+      "subtitle": "(Figure 6)",
+      "subtitleColor": "chocolate",
+      "subtitleFont": "Acme",
       "color": "chocolate",
       "text": "Total number of workers in the Tourism industry (2000 - 2020)",
       "font": "Acme",
