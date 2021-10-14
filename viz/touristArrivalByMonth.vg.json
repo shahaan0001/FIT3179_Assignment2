@@ -4,6 +4,9 @@
         "url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/data/touristArrival_byMonth.csv"
     },
     "title": {
+        "subtitle": "(Figure 2)",
+        "subtitleColor": "chocolate",
+        "subtitleFont": "Acme",
         "color": "chocolate",
         "text": "Monthly number of tourist arrival",
         "font": "Acme",
