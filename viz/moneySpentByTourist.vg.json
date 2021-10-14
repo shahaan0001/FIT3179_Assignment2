@@ -1,7 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-      "color": "chocolate",
+        "subtitle": "(Figure 5)",
+        "subtitleColor": "chocolate",
+        "subtitleFont": "Acme",
+        "color": "chocolate",
         "text": "Tourism Expenditure (Rs) per tourist night by item of expenditure",
         "fontSize": 18,
         "font": "Acme",
