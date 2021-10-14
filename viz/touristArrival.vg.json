@@ -2,6 +2,9 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
         "color": "chocolate",
+        "subtitle": "(Figure 1)",
+        "subtitleColor": "chocolate",
+        "subtitleFont": "Acme",
         "text": "Tourist Arrival by Country (2013 - 2020)",
         "font": "Acme",
         "fontSize": 18
