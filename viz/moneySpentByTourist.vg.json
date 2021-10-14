@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "color": "chocolate",
+        "text": "Tourism Expenditure (Rs) per tourist night by item of expenditure",
+        "fontSize": 18,
+        "font": "Acme",
+        "dy": -20
+    },
+    "background":"#bde3ff",
+    "width": 500, "height": 300,
+    "data": {"url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/data/moneySpentBySector.csv"},
+    "mark": {"type": "area", "line": true, "point": true},
+    "encoding": {
+      "x": {
+        "timeUnit": "year", "field": "Year",
+        "title": "Year",
+        "axis": {"format": "%Y"}
+      },
+      "y": {
+        "aggregate": "sum",
+        "field": "MoneySpent",
+        "title": "Amount spent (Rs)"
+      },
+      "order": {
+          "aggregate": "count",
+          "field": "MoneySpent"
+      },
+      "color": {
+        "field": "Sector",
+        "scale": {"scheme": "set2"}
+      },
+      "tooltip": [
+        {"field": "Sector", "type": "nominal"},
+        {"field": "MoneySpent", "type": "quantitative", "title": "Amount spent (Rs)"},
+        {"field": "Year", "type": "temporal", "format": "%Y"}
+      ]
+    }
+  }

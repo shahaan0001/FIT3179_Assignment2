@@ -1,0 +1,74 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/data/hotelOccupancy_2010.csv"},
+    "background":"#bde3ff",
+    "vconcat": [{
+      "title": {
+        "color": "chocolate",
+        "text": "Monthly % Occupancy of all hotels (2010 - 2020)",
+        "font": "Acme",
+        "fontSize": 18
+      },
+      "width": 480,
+      "mark": {
+        "type": "area",
+        "line": {
+            "color":"orangered"
+        },
+        "color": {
+            "x1": 1,
+            "y1": 2,
+            "x2": 1,
+            "y2": 0,
+            "gradient":"linear",
+            "stops": [
+              {
+                "offset": 0,
+                "color": "white"
+              },
+              {
+                "offset": 1,
+                "color": "orange"
+              }
+            ]
+        }
+      },
+      "encoding": {
+        "tooltip": [
+            {"field": "Date", "type": "temporal", "format": "%b %Y"},
+            {"field": "Occupancy", "type": "quantitative", "title": "% Occupancy"}
+        ],
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": "", "gridColor":"lightgrey"}
+        },
+        "y": {"field": "Occupancy", "type": "quantitative", "title": "% Occupancy", "axis": {"gridColor":"lightgrey"}}
+      }
+    }, {
+      "width": 480,
+      "height": 60,
+      "mark": {
+        "type": "line",
+        "color":"orangered"
+      },
+      "params": [{
+        "name": "brush",
+        "select": {"type": "interval", "encodings": ["x"]}
+      }],
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "type": "temporal",
+          "axis":{"grid":false}
+        },
+        "y": {
+          "field": "Occupancy",
+          "type": "quantitative",
+          "title": "% Occupancy",
+          "axis": {"tickCount": 3, "grid": false}
+        }
+      }
+    }]
+  }

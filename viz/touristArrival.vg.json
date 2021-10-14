@@ -1,0 +1,121 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "color": "chocolate",
+        "text": "Tourist Arrival by Country (2013 - 2020)",
+        "font": "Acme",
+        "fontSize": 18
+    },
+    "width": 800,
+    "height": 550,
+    "background":"#bde3ff",
+    "projection": {
+        "type": "equalEarth",
+        "translate": [390,200],
+        "center": { "expr": "center_to" },
+        "scale": { "expr": "zoom_level" }
+    },
+    "params": [{
+            "name": "Year_selection",
+            "value": 2018,
+            "bind": {
+                "input": "range",
+                "min": 2013,
+                "max": 2020,
+                "step": 1,
+                "name": "Year:  "
+            }
+        },
+        {
+            "name": "zoom_level",
+            "value": 150,
+            "bind": {
+                "input": "range",
+                "min": 150,
+                "max": 1000,
+                "step": 50,
+                "name": "Zoom: "
+            }
+        },
+        {
+            "name": "center_to",
+            "value": [2.21, 46.23],
+            "bind": {
+                "input": "select",
+                "options": [
+                    [2.21, 46.23],
+                    [21.76, -4.04],
+                    [-95.71, 37.09],
+                    [-51.93, -14.24]
+                ],
+                "labels": ["Europe", "Africa", "North America", "South America"],
+                "name": "Map Centre: "
+            }
+        }
+    ],
+    "layer": [{
+            "data": {
+                "url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/js/world_map_topo.json",
+                "format": { "type": "topojson", "feature": "custom.geo" }
+            },
+            "transform": [{
+                "calculate": "'Data for ' + datum.properties.name + ' is not available'",
+                "as": "note"
+            }],
+            "mark": {
+                "type": "geoshape",
+                "fill": "#ddd",
+                "stroke": "white",
+                "strokeWidth": 1
+            },
+            "encoding": { "tooltip": { "field": "note" } }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/data/touristArrival_byYear.csv"
+            },
+            "transform": [{
+                    "lookup": "Country",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/js/world_map_topo.json",
+                            "format": {
+                                "type": "topojson",
+                                "feature": "custom.geo"
+                            }
+                        },
+                        "key": "properties.name"
+                    },
+                    "as": "geo"
+                },
+                { "filter": "datum.Year == Year_selection" }
+            ],
+            "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5
+            },
+            "encoding": {
+                "shape": { "field": "geo", "type": "geojson" },
+                "color": {
+                    "field": "Arrivals",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [
+                            1000,
+                            305000
+                        ],
+                        "scheme": "oranges"
+                    },
+                    "legend": { "format": ".2s" }
+                },
+                "tooltip": [
+                    { "field": "Country", "type": "nominal", "title": "Country" },
+                    {
+                        "field": "Arrivals",
+                        "type": "quantitative",
+                        "title": "Number of arrivals"
+                    }
+                ]
+            }
+        }
+    ],
+    "config": {}
+}
