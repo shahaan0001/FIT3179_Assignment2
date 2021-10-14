@@ -2,6 +2,9 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {"url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/data/tourismEarning.csv"},
     "title": {
+        "subtitle": "(Figure 7)",
+        "subtitleColor": "chocolate",
+        "subtitleFont": "Acme",
         "color": "chocolate",
         "text": "Earnings from the Tourism industry, the value added to it & the % Contribition to GDP ",
         "font": "Acme",
