@@ -2,6 +2,15 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": { "url": "https://raw.githubusercontent.com/shahaan0001/FIT3179_Assignment2/main/data/touristGender.csv"},
     "background":"#bde3ff",
+    "title": {
+      "subtitle": "(Figure 4)",
+      "subtitleColor": "chocolate",
+      "subtitleFont": "Acme",
+      "color": "chocolate",
+      "text": "Tourist Arrival by Country (2013 - 2020)",
+      "font": "Acme",
+      "fontSize": 18
+    },
     "spacing": 1,
     "hconcat": [{
       "transform": [{
