@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Visualisations | An Example</title>
+  <!-- Import Vega & Vega-Lite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick+Hand">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+
+</head>
+<body>
+
+ <div class="page">
+
+   <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Tourism in Mauritius</h1>
+        <p style= "padding-left: 2em; padding-right: 2em;">Mauritius being a tropical island, is a popular holiday destination among tourists. In 2018, the country registered approximately 
+            1.4 million tourist arrivals which is greater than the country's population (1.2 million). As such, the tourism industry 
+            is one of the most contributing sectors to the GDP of the island, providing jobs to the population and generating a great amount of income. 
+        </p>
+      </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <div class="description description-left">
+            <h2 style="text-align: center; padding-top: 1em;">Where do tourists come from?</h2>
+            <p>The interactive diagram below allows you to see where most tourists come from throughout the years. Most of the tourists of Mauritius 
+                come from Europe, mainly from France. By setting the year to 2020, the effect of the Covid-19 virus can be seen by the great reduction of tourist
+                influx from around the world.
+            </p>
+          </div>
+          <div class="pure-u-1-1">
+            <div style="padding-left: 20em; padding-top: 2em;" id="touristArrival" class="vis-container"></div>
+          </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-5">
+          <div class="description description-left">
+            <h2 style="padding-top: 1.5em; padding-left: 3em;">When do most tourists visit?</h2>
+            <p style="padding-left: 3em;">Looking at the diagram below, we can notice the growth of the tourism industry throughout the years.
+            As time progresses, the total number of tourists visiting Mauritius was generally increasing, until 2020 where we can see the crash of the industry due to Covid-19. We can
+            also determine that normally, tourists mainly visit the island during the end and early start of the year, with the least number of tourists coming in, in June.</p>
+          </div>
+        </div>
+        <div class="pure-u-3-5">
+            <div class="description description-right">
+                <h2 style="padding-top: 1.5em; padding-left: 9em; padding-right: 3em;">Hotels Occupancy rates</h2>
+                <p style="padding-left: 12em; padding-right: 3em;">The interactive figure below shows the monthly occupancy rate of all hotels on the island. We can see that it was generally increasing over the years, suggesting 
+                the growth of the tourism industry, before crashing in 2020. We can also notice that every year, the number of tourists coming in decreases until June before starting to increase again.</p>
+            </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-5">
+            <div style="padding-top: 4em; padding-left: 3em;" id="touristMonthly" class="vis-container"></div>
+        </div>
+        <div class="pure-u-2-5">
+            <div style="padding-left: 18em;" id="hotelRates" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <div class="pure-g">
+        <div class="pure-u-3-5">
+          <div class="description description-left">
+            <h2 style="padding-top: 3em; padding-left: 7.7em;">Tourists by genders</h2>
+            <p style="padding-left: 2em;">The figure on the right shows the distribution of tourists by genders throughout the years.
+            Generally, the distribution is even with a slightly greater number of males coming in every year.</p>
+          </div>
+        </div>
+        <div class="pure-u-2-5">
+            <div style="padding-top: 5em;padding-left:2em" id="touristGenders" class="vis-container"></div>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-3-5">
+          <div class="description description-left">
+            <div style="padding-top: 5em;padding-left:2.5em" id="touristExpenditure" class="vis-container"></div>
+          </div>
+        </div>
+        <div class="pure-u-2-5">
+            <h2 style="padding-top: 1.2em; padding-left: 2.5em;">Tourist Expenditure</h2>
+            <p style="padding-right: 4em;">The figure on the left shows how much money tourists spent on different sectors over the years.
+            Tourists spend more on accommodation than all the other sectors combined together. We can also notice that the overall expenditure
+            was rising over the years which provides further proof of the growth of the tourism industry in Mauritius.</p>
+        </div>
+    </div>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-5">
+          <div class="description description-left">
+            <h2 style="padding-top: 1.5em; padding-left: 3em;">Employment in the Tourism industry</h2>
+            <p style="padding-left: 3em;">The diagram below shows the total number of workers in the tourism industry. We can see
+             a steady rise across the years, indicating that the tourism industry helps provide jobs to the population. We can also conclude
+             that most of the people working in this industry, work in hotels while minorities work in the food and travel sectors.</p>
+          </div>
+        </div>
+        <div class="pure-u-3-5">
+            <div class="description description-right">
+                <h2 style="padding-top: 1.5em; padding-left: 9em; padding-right: 3em;">Earnings from the Tourism industry</h2>
+                <p style="padding-left: 12em; padding-right: 3em;">Over the years, we can notice a general increase in the income generated by the tourism industry (excluding 2020), with the sector
+                providing Rs 63 billion in 2019 (~ $1 billion). Hence it is no surprise to see that the value added to the industry also increases linearly over time, as well as a steady contribution
+                to the GDP of the country.</p>
+            </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-2-5">
+            <div style="padding-top: 4em; padding-left: 3em;" id="employment" class="vis-container"></div>
+        </div>
+        <div class="pure-u-2-5">
+            <div style="padding-top: 5.8em;padding-left: 15em;" id="earnings" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+  
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p style="padding-top: 3em;">This visualisation for FIT3179 assignment 2 was created by <a href="https://github.com/shahaan0001" target="_blank">Shahaan Muhammad Rahimbux (Student ID: 30820324)</a>.</p>
+      </div>
+    </div>
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "./viz/touristArrival.vg.json";
+  var specVis2= "./line-chart-responsive.json";
+
+  vegaEmbed('#touristArrival', specVis1, {"actions": false});
+  
+   vegaEmbed('#touristMonthly', "./viz/touristArrivalByMonth.vg.json", {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#hotelRates', "./viz/hotelOccupancy.vg.json", {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#touristGenders', "./viz/touristsByGender.vg.json", {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#touristExpenditure', "./viz/moneySpentByTourist.vg.json", {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#employment', "./viz/numberOfEmployees.vg.json", {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#earnings', "./viz/tourismEarning.vg.json", {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+</body>
+</html>
